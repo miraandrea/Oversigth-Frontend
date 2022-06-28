@@ -1,0 +1,57 @@
+.modalTeacher {
+    position: absolute;
+    top: 9%;
+    left: 7%;
+    width: 88vw;
+    height: 123vw;
+    background-color: #fff;
+}
+
+.cancelTeacher {
+    color: #fff;
+    background-color: red;
+    border: none;
+    width: 109px;
+    height: 35px;
+    position: relative;
+    top: 119.5vw;
+    left: -152px;
+}
+
+@media (min-width: 720px) {
+    .modalTeacher {
+        left: 8%;
+        height: 95vw;
+    }
+
+    .cancelTeacher {
+        top: 89.5vw;
+        left: -160px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modalTeacher {
+        left: 8%;
+        height: 63vw;
+    }
+
+    .cancelTeacher {
+        width: 146px;
+        height: 42px;
+        font-size: 24px;
+        left: -19vw;
+        top: 51.5vw;
+    }
+}
+
+@media (min-width: 1500px) {
+    .modalTeacher {
+        height: 49vw;
+    }
+
+    .cancelTeacher {
+        left: -18vw;
+        top: 51vw;
+    }
+}

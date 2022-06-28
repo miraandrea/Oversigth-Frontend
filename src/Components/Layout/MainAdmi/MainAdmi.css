@@ -1,0 +1,52 @@
+.cardTeacher {
+    border: 2px solid #1d9df6;
+    width: 5rem;
+    height: 9rem;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 4px #1d9df6;
+}
+
+.cardTeacher img {
+    width: 7rem;
+    height: 5rem;
+    border-radius: 4px;
+    margin-top: -15.5px;
+}
+
+.cardTeacher p {
+    padding-top: 1%;
+    text-align: center;
+    font-size: 75%;
+    margin-top: 0.1rem;
+}
+
+.paper1 {
+    position: absolute;
+    top: 11%;
+    left: 5%;
+    width: 90%;
+    height: 132vw;
+    background-color: #fff;
+}
+
+@media (min-width: 720px) {
+    .paper1 {
+        left: 15%;
+        width: 80%;
+        height: 94vw;
+    }
+}
+
+@media(min-width: 1200px) {
+    .paper1 {
+        top: 11%;
+        left: 21%;
+        width: 45%;
+        height: 39vw;
+    }
+}

@@ -1,0 +1,55 @@
+/* .menuhr{
+    transform: rotate(90deg);
+    position: relative;
+    right: 30%;
+    height: 60%;
+    margin-top: 230px;
+    top: -115px;
+}
+.menuhr hr{
+    width: 75%;
+    background-color: #1d9df6;
+
+}
+
+@media(max-width:780px){
+
+    .menuhr{
+        transform: rotate(90deg);
+        position: relative;
+        right: 30%;
+        height: 200%;
+        width: 100%;
+        margin-top: 150px;
+        top: -115px;
+
+    }
+    .menuhr hr{
+        width: 250%;
+        margin-top: -25%;
+        background-color: #1d9df6;
+    
+    }
+
+}
+
+@media(max-width: 500px){
+    .menuhr{
+        transform: rotate(90deg);
+        position: relative;
+        right: 23%;
+        height: 200%;
+        width: 100%;
+        margin-top: 150px;
+        top: -175px;
+
+    }
+    .menuhr hr{
+        width: 250%;
+        margin-top: -45%;
+        background-color: #1d9df6;
+    
+    }
+
+}
+ */

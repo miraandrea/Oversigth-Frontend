@@ -1,0 +1,19 @@
+.mainCardStudent{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 438px);
+    place-content: center;
+}
+@media(min-width:720px){
+    .mainCardStudent{
+        position: relative;
+        left: -8%;
+        width: 100vw;
+        grid-template-columns: repeat(auto-fill, 556px);
+    }
+}
+@media(min-width: 1200px){
+    .mainCardStudent{
+        width: 85vw;
+        margin-left: -15%;
+    }
+}

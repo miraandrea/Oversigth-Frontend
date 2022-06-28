@@ -1,0 +1,11 @@
+/* @media (max-width:320px){
+    .menuhr1{
+        transform: rotate(90deg);
+        position: relative;
+        right: 30%;
+        top: -35px;
+    }
+    .menuhr1 hr{
+        background-color: #1d9df6;
+    }
+} */

@@ -1,0 +1,171 @@
+.centerOver {
+    display: flex;
+    justify-content: center;
+    padding-top: 19px;
+}
+
+.OverFlow {
+    background-color: #0303030a;
+    width: 91vw;
+    height: 80vw;
+    overflow: auto;
+}
+
+.cardInfo1 {
+    margin-left: -25px;
+    margin-top: -33px;
+}
+
+.btn_Cancel1 {
+    display: flex;
+    margin-top: 20px;
+    gap: 67px;
+    margin-left: 5px;
+}
+
+.btn_Cancel {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    font-size: 31px;
+    color: #f61d1d;
+    margin-left: -4px;
+    margin-top: -124vw;
+}
+
+.photoView {
+    width: 72px;
+    height: 66px;
+    border-radius: 5px;
+    margin-left: 22px;
+    margin-top: 15px;
+}
+
+.information {
+    text-align: center;
+    width: 50vw;
+    margin-top: -76px;
+    margin-left: 118px;
+}
+
+.information input {
+    border: none;
+    border-bottom: 2px solid #1D9DF6;
+    font-size: 15px;
+    width: 35vw;
+}
+
+.iconRecord {
+    position: relative;
+    top: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prueba {
+    display: flex;
+    justify-content: center;
+}
+
+textarea {
+    border: 2px solid #1D9DF6;
+}
+
+.disable {
+    color: #fff;
+    background-color: #f61d1d;
+    border: none;
+    width: 109px;
+    height: 35px;
+}
+
+.update {
+    color: #fff;
+    background-color: #1D9DF6;
+    border: none;
+    width: 109px;
+    height: 35px;
+}
+
+.mensaje2 {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+.mensaje {
+    border-bottom: 2px solid #1D9DF6;
+    font-size: 22px;
+    margin-top: 127px;
+}
+
+@media (min-width: 720px) {
+    .OverFlow {
+        width: 76vw;
+        height: 62vw;
+    }
+
+    .btn_Cancel1 {
+        margin-top: 27px;
+        gap: 91px;
+    }
+
+    .btn_Cancel {
+        font-size: 36px;
+        margin-left: -10px;
+        margin-top: -90vw;
+    }
+
+    .photoView {
+        width: 102px;
+        height: 92px;
+        margin-left: 29px;
+        margin-top: 20px;
+    }
+
+    .information {
+        width: 58vw;
+        margin-top: -100px;
+    }
+
+    .mensaje2 {
+        width: 87vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .centerOver {
+        padding-top: 16px;
+    }
+
+    .information {
+        width: 15vw;
+        margin-top: -101px;
+        margin-left: 40%;
+    }
+
+    .OverFlow {
+        width: 42vw;
+        height: 20vw;
+    }
+
+    .cardInfo1 {
+        margin-left: 16px;
+        margin-top: 14px;
+    }
+
+    .btn_Cancel {
+        margin-top: -39.5vw;
+    }
+
+    .information input {
+        font-size: 15px;
+        width: 14vw;
+        text-align: center;
+    }
+
+    .mensaje2 {
+        width: 50vw;
+    }
+}

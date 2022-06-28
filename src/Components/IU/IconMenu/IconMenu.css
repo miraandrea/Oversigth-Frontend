@@ -1,0 +1,79 @@
+.menu {
+    width: 30%;
+    height: 30%;
+    margin: 8px 10px;
+}
+
+.modal {
+    position: absolute;
+    top: 11%;
+    left: 9%;
+    width: 85%;
+    height: 105vw;
+    background-color: #fff;
+}
+
+.modalGroup {
+    position: absolute;
+    top: 11%;
+    left: 9%;
+    width: 85%;
+    height: 77vw;
+    background-color: #fff;
+}
+
+.cancel {
+    color: #fff;
+    background-color: #f61d1d;
+    border: none;
+    width: 105px;
+    height: 35px;
+    position: relative;
+    top: -1.2rem;
+    left: 4rem;
+    border-radius: 5px
+}
+
+.iconmenu {
+    color: #1d9df6;
+}
+
+@media (min-width: 720px) {
+    .modal {
+        left: 13%;
+        width: 80%;
+        height: 70vw;
+    }
+
+    .cancel {
+        top: -1.1rem;
+        left: 9rem;
+    }
+
+    .modalGroup {
+        top: 14%;
+        left: 25%;
+        width: 62%;
+        height: 45vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal {
+        left: 23%;
+        width: 50%;
+        height: 45vw;
+    }
+
+    .cancel {
+        top: -1.1rem;
+        left: 9rem;
+    }
+
+    .modalGroup {
+        top: 15%;
+        left: 32%;
+        width: 46%;
+        height: 30vw;
+    }
+}

@@ -1,0 +1,71 @@
+.textGroup {
+  margin-top: 8%;
+  font-size: 32px;
+  font-family: "Pacifico", cursive;
+  position: relative;
+  right: -8%;
+}
+
+.iconGroup {
+  color: #1d9df6;
+  position: relative;
+  top: -37px;
+  left: 69%;
+  width: 10%;
+  height: 0%;
+}
+
+.lineGroup {
+  border: 1px solid #1d9df6;
+  width: 90%;
+  margin: -20px 17px;
+}
+
+.mainGroup {
+  position: relative;
+  left: 25px;
+  width: 85%;
+}
+
+.containerNameGroup {
+  padding-top: 35px;
+}
+
+.nameGroup {
+  width: 100%;
+  height: 25px;
+  border-radius: 5px;
+  color: #949292;
+  border: 1px solid #1d9df6;
+}
+
+.photoGroup {
+  padding-top: 15px;
+}
+
+@media (min-width: 720px) {
+  .mainGroup {
+    left: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .textGroup {
+    margin-top: 4%;
+    font-size: 44px;
+    right: -11%;
+  }
+
+  .iconGroup {
+    top: -56px;
+    left: 67%;
+  }
+
+  .lineGroup {
+    margin: -30px 17px;
+  }
+
+  .containerNameGroup {
+    padding-top: 45px;
+  }
+}

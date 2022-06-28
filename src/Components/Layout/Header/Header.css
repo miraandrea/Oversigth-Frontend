@@ -1,0 +1,18 @@
+.containerHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.textLogo {
+  font-family: "pacifico";
+  width: 50vw;
+  margin-left: -15%;
+}
+
+@media (min-width: 720px) {
+  .textLogo {
+    width: 28vw;
+    margin-left: 0%;
+  }
+}

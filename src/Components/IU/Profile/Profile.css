@@ -1,0 +1,85 @@
+.imgProfile {
+    border-radius: 50%;
+    width: 35vw;
+    height: 35vw;
+}
+
+.containerImgProfile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.cont_profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px
+}
+
+.input_profile {
+    width: 270px;
+    height: 45px;
+    text-align: center;
+    border: 1px solid #1d9df6;
+    border-radius: 3px;
+}
+
+.Actualizar {
+    background-color: #1d9df6;
+    border: none;
+    width: 270px;
+    height: 40px;
+    color: #ffff;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+.input_profile1 {
+    width: 64vw;
+    height: 11vw;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #1d9df6;
+}
+
+.input_profile1:focus,
+.input_profile1:hover {
+    background-color: #949292;
+}
+
+@media (min-width: 720px) {
+    .input_profile1 {
+        width: 38vw;
+        height: 6vw;
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .imgProfile {
+        width: 27vw;
+        height: 27vw;
+    }
+
+    .cont_profile {
+        align-items: center;
+        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 373px);
+        place-content: center;
+        margin-left: 10%;
+    }
+
+    .input_profile1 {
+        width: 23vw;
+        height: 4vw;
+        font-size: 1.5em;
+    }
+
+    .btnUpPerfile {
+        width: 55vw;
+        text-align: center;
+    }
+}

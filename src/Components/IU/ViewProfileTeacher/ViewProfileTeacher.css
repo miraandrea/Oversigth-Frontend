@@ -1,0 +1,237 @@
+.photoViewTeacher {
+    width: 90px;
+    height: 86px;
+    border-radius: 5px;
+    margin-left: 23px;
+    margin-top: 12px;
+}
+
+.informationTeacher {
+    text-align: center;
+    width: 50vw;
+    margin-top: -86px;
+    margin-left: 116px;
+}
+
+.containerTeacher {
+    border: 1px solid #1D9DF6;
+    width: 83vw;
+    height: 79vw;
+    margin-left: 2vw;
+    margin-top: 7vw;
+    border-radius: 5px;
+}
+
+.titleTeacher {
+    border: none;
+    border-bottom: 2px solid #1D9DF6;
+    font-size: 15px;
+    width: 35vw;
+}
+
+.dataTe {
+    border: none;
+    border-bottom: 2px solid #1D9DF6;
+    font-size: 15px;
+    width: 37vw;
+}
+
+.dataContTe {
+    margin-left: 180px;
+    margin-top: -25px;
+}
+
+.description {
+    width: 83vw;
+    height: 60vw;
+    margin-top: 19px;
+    text-align: center;
+}
+
+.descrip {
+    width: 67vw;
+    height: 21vw;
+}
+
+.firms {
+    width: 78vw;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.firm {
+    border: none;
+    border-bottom: 2px solid #1D9DF6;
+    font-size: 15px;
+    width: 35vw;
+}
+
+.studet {
+    width: 37vw;
+}
+
+.teacher {
+    width: 37vw;
+}
+
+.btnRegister {
+    color: rgb(255, 255, 255);
+    background-color: #1D9DF6;
+    border: none;
+    width: 109px;
+    height: 35px;
+    position: relative;
+    top: 17px;
+    left: 246px;
+}
+
+@media (min-width: 720px) {
+    .photoViewTeacher {
+        width: 134px;
+        height: 116px;
+    }
+
+    .informationTeacher {
+        margin-top: -110px;
+        margin-left: 177px;
+        font-size: 1.2rem;
+    }
+
+    .containerTeacher {
+        height: 59vw;
+    }
+
+    .titleTeacher {
+        font-size: 24px;
+        width: 38vw;
+    }
+
+    .dataTe {
+        font-size: 24px;
+        width: 40vw;
+    }
+
+    .dataContTe {
+        margin-left: 304px;
+        margin-top: -29px;
+    }
+
+    .description {
+        width: 43vw;
+        height: 38vw;
+        margin-top: 52px;
+    }
+
+    .descrip {
+        width: 39vw;
+        height: 25vw;
+    }
+
+    .descriptionStuden {
+        position: relative;
+        top: -29vw;
+        left: 40vw;
+    }
+
+    .btnRegister {
+        top: 32px;
+        left: 491px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .photoViewTeacher {
+        width: 183px;
+        height: 151px;
+        margin-left: 57px;
+    }
+
+    .informationTeacher {
+        margin-top: -139px;
+        margin-left: 278px;
+        font-size: 1.5rem;
+    }
+
+    .containerTeacher {
+        height: 41vw;
+        margin-top: 3vw;
+    }
+
+    .dataContTe {
+        margin-left: 556px;
+        margin-top: -29px;
+    }
+
+    .dataTe {
+        font-size: 27px;
+        width: 35vw;
+    }
+
+    .description {
+        height: 30vw;
+        margin-top: 39px;
+        font-size: 25px;
+    }
+
+    .descrip {
+        height: 21vw;
+        font-size: 25px;
+    }
+
+    .descriptionStuden {
+        top: -25vw;
+    }
+
+    .firm {
+        font-size: 20px;
+    }
+
+    .btnRegister {
+        width: 138px;
+        height: 42px;
+        font-size: 24px;
+        left: 73vw;
+        top: 2vw;
+    }
+}
+
+@media (min-width: 1500px) {
+    .photoViewTeacher {
+        width: 141px;
+        height: 123px;
+    }
+
+    .informationTeacher {
+        margin-top: -125px;
+        margin-left: 305px;
+        font-size: 1.3rem;
+    }
+
+    .containerTeacher {
+        height: 34vw;
+    }
+
+    .dataContTe {
+        margin-left: 706px;
+        margin-top: -30px;
+    }
+
+    .description {
+        height: 26vw;
+    }
+
+    .descrip {
+        height: 16vw;
+    }
+
+    .descriptionStuden {
+        top: -19vw;
+    }
+
+    .btnRegister {
+        left: 74vw;
+        top: 1vw;
+    }
+}
