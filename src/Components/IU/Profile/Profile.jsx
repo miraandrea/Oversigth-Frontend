@@ -13,13 +13,13 @@ export const Profile = ({ user }) => {
 
   if (rol === "Administrator") {
     const idUser = cookies.get("idAdministrador")
-    UrlStudent = "https://oversigthapi.azurewebsites.net/v1/administrators/" + idUser;
+    UrlStudent = "http://localhost:4000/v1/administrators/" + idUser;
   } else if (rol === "Teacher") {
     const idUser = cookies.get("idDocente")
-    UrlStudent = "https://oversigthapi.azurewebsites.net/v1/teachers/" + idUser;
+    UrlStudent = "http://localhost:4000/v1/teachers/" + idUser;
   } else if (rol === "Student") {
     const idUser = cookies.get("idEstudiante")
-    UrlStudent = "https://oversigthapi.azurewebsites.net/v1/students/" + idUser;
+    UrlStudent = "http://localhost:4000/v1/students/" + idUser;
   }
 
   const [document, setDocument] = useState("")
@@ -52,7 +52,7 @@ export const Profile = ({ user }) => {
   }
 
   const getToken = (data) => {
-    const urlToken = "https://oversigthapi.azurewebsites.net/v1/decode/" + data;
+    const urlToken = "http://localhost:4000/v1/decode/" + data;
     axios.get(urlToken).then((response) => {
       getMessage(response.status);
     });

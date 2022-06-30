@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 export const GroupAdd = () => {
 
   //token teacher
-  const UrlTokenTeacher = 'https://oversigthapi.azurewebsites.net/v1/teachers';
+  const UrlTokenTeacher = 'http://localhost:4000/v1/teachers';
 
   useEffect(() => {
     const getTeacher = () => {
@@ -21,7 +21,7 @@ export const GroupAdd = () => {
   const [data, setData] = useState([" "]);
 
   const userTeacher = (data) => {
-    const urlTeacher = "https://oversigthapi.azurewebsites.net/v1/decode/" + data;
+    const urlTeacher = "http://localhost:4000/v1/decode/" + data;
     axios.get(urlTeacher).then((response) => {
       let dataArray = [];
       for (let index = 0; index < Object.keys(response.data[0]).length; index++) {
@@ -46,7 +46,7 @@ export const GroupAdd = () => {
     formdata.append("image", image)
     formdata.append("documentTeacher", teacher)
 
-    axios.post("https://oversigthapi.azurewebsites.net/v5/courses", formdata, {
+    axios.post("http://localhost:4000/v5/courses", formdata, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

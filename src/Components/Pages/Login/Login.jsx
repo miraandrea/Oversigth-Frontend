@@ -7,9 +7,10 @@ import Cookies from "universal-cookie/es6";
 import { TiLockClosed } from "react-icons/ti";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { TextField, Button, Typography } from "@mui/material";
+import {AiOutlineEyeInvisible ,AiOutlineEye } from 'react-icons/ai';
 
 export const Login = () => {
-  const urlUserAuthenticate = "https://oversigthapi.azurewebsites.net/v5/authenticate";
+  const urlUserAuthenticate = "http://localhost:4000/v5/authenticate";
 
   const cookies = new Cookies();
 
@@ -85,6 +86,13 @@ export const Login = () => {
     setErrorMessage(true);
     setMessageHelperText("Usuario o contraseña incorrecta");
   };
+  
+  //see password
+  const [state, setState] = useState(false);
+
+  const toggleBtn = () => {
+    setState(!state);
+  } 
 
   //btn bloquiado
   function nobackbutton() {
@@ -95,6 +103,7 @@ export const Login = () => {
       window.location.hash = "no-back-button";
     };
   }
+
 
   return (
     <div className="login">
@@ -115,18 +124,27 @@ export const Login = () => {
                 onChange={handleUser}
               />
             </div>
-            <div className="form_input">
+            <div className="form_input1">
               <TiLockClosed className="form_icon" />
               <TextField
                 id="txtEmail"
                 label="Contraseña"
                 variant="outlined"
                 name="password"
-                type="password"
+                type={state ? "text" :
+                "password" } 
                 error={errorMessage}
                 helperText={messageHelperText}
                 onChange={handlePassword}
                 />
+                <div className="eye">
+                    <button className="btn_eye" onClick={toggleBtn}>
+                    {
+                      state ? <AiOutlineEyeInvisible/>:
+                      <AiOutlineEye/>
+                    }
+                    </button>
+                </div>
             </div>
             <div onClick={handleSubmit} className="form_btn">
               <Button variant="contained">Iniciar Sesion</Button>

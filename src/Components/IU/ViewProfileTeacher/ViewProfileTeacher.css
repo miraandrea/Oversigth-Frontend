@@ -141,43 +141,59 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1326px) {
     .photoViewTeacher {
-        width: 183px;
-        height: 151px;
+        width: 130px;
+        height: 110px;
         margin-left: 57px;
     }
 
+    .descriptionStuden {
+        position: relative;
+        margin-top: 100px;
+        
+        left: 40vw;
+    }
+
+
+    .titleTeacher {
+        font-size: 20px;
+        width: 35vw;
+    }
+
     .informationTeacher {
-        margin-top: -139px;
-        margin-left: 278px;
-        font-size: 1.5rem;
+        
+        margin-top: -130px;
+        margin-left: 200px;
+        font-size: 1rem;
     }
 
     .containerTeacher {
-        height: 41vw;
-        margin-top: 3vw;
+        
+        height: 28vw;
+        margin-top: 6vw;
     }
 
     .dataContTe {
-        margin-left: 556px;
-        margin-top: -29px;
+        margin-left: 620px;
+        margin-top: -23px;
     }
 
     .dataTe {
-        font-size: 27px;
+        font-size: 18px;
         width: 35vw;
     }
 
     .description {
-        height: 30vw;
-        margin-top: 39px;
-        font-size: 25px;
+        height: 26vw;
+        margin-top: 29px;
+        font-size: 20px;
     }
 
     .descrip {
-        height: 21vw;
-        font-size: 25px;
+        height: 15vw;
+        width: 30vw;
+        font-size: 15px;
     }
 
     .descriptionStuden {
@@ -185,7 +201,15 @@
     }
 
     .firm {
-        font-size: 20px;
+        font-size: 17px;
+        width: 320px;
+        
+    }
+
+
+    .firms{
+        
+        margin-top: -70px;
     }
 
     .btnRegister {

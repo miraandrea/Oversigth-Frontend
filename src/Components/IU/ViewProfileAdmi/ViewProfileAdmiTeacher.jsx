@@ -11,8 +11,39 @@ import { CardStudent } from '../CardStudent/CardStudent';
 //librerias
 import jwtDecode from "jwt-decode";
 import { AiOutlineFileSearch } from "react-icons/ai";
+import Cookies from "universal-cookie";
 
 export const ViewProfileAdmiTeacher = ({ teacher }) => {
+
+  //editar
+  const cookies = new Cookies();
+  const documentAdmin = (cookies.get("idAdministrador"))
+  
+  const [nameTeacher, setNameTeacher] = useState("")
+  const [lastName, setLastName] = useState("")
+
+  const UrlStudent1 = "http://localhost:4000/v1/administrators/" + documentAdmin + "/teachers/" + teacher.documentoDocente;
+
+  const format = () => {
+
+    axios.put(UrlStudent1, {
+      "name": nameTeacher,
+      "lastName": lastName
+    })
+      .then((response) => getMessage(response.status))
+      .catch((error) => console.log(error))
+  }
+
+  const getMessage = (data) => {
+    if (data == 202) {
+      {
+        swal("Exito!", "Se actualizo exitosamente", "success")
+        // window.location.reload()
+      }
+    } else {
+      swal("Oops!", "No se pudo actualizar", "error");
+    }
+  }
 
   //historial 
   const { name } = useParams()
@@ -20,7 +51,7 @@ export const ViewProfileAdmiTeacher = ({ teacher }) => {
 
   useEffect(() => {
     const getRecord = () => {
-      axios.get(`https://oversigthapi.azurewebsites.net/v1/teachers/${name}/observers`)
+      axios.get(`http://localhost:4000/v1/teachers/${name}/observers`)
         .then((res) => {
           const token = jwtDecode(res.data)
           setRecord(token.results)
@@ -32,7 +63,7 @@ export const ViewProfileAdmiTeacher = ({ teacher }) => {
 
   //disable teachers
   const Disable = () => {
-    const urlDisable = "https://oversigthapi.azurewebsites.net/v1/teachers/" + teacher.documentoDocente;
+    const urlDisable = "http://localhost:4000/v1/teachers/" + teacher.documentoDocente;
     axios.delete(urlDisable).then((response) => {
       mensage(response.status);
     });
@@ -52,8 +83,9 @@ export const ViewProfileAdmiTeacher = ({ teacher }) => {
       <img src={teacher.fotoDocente || foto} alt="photo" className="photoView" />
       <div className='centerInfor'>
         <div className='information'>
-          <p>{teacher.nombreDocente} {teacher.apellidoDocente}</p>
-          <p>{teacher.documentoDocente}</p>
+          <input type="text" defaultValue={teacher.nombreDocente} onChange={(e) => setNameTeacher(e.target.value)} />
+          <input type="text" defaultValue={teacher.apellidoDocente} onChange={(e) => setLastName(e.target.value)} />
+          <input type="text" value={teacher.documentoDocente} />
           <p>Docente</p>
         </div>
       </div>
@@ -72,7 +104,6 @@ export const ViewProfileAdmiTeacher = ({ teacher }) => {
               ) : (
                 <div className='mensaje2' >
                   <p className='mensaje' >No tiene anotaciones</p>
-
                 </div>
               )}
             </div>
@@ -82,7 +113,7 @@ export const ViewProfileAdmiTeacher = ({ teacher }) => {
       <div className='prueba'>
         <div className='centerBtn' >
           <div className="btn_Cancel1">
-            <button className="update">Actualizar</button>
+            <button className="update" onClick={format}>Actualizar</button>
             <button className="disable" onClick={Disable}>Deshabilitar</button>
           </div>
         </div>

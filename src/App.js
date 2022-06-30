@@ -17,6 +17,7 @@ import {
   Routes,
   Route
 } from "react-router-dom"
+import { NotFound } from './Components/Pages/NotFound/NotFound';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route>
           <Route path='/' element={<Login />} />
+          <Route path='/no' element={<NotFound />} />
           <Route element={<PrivaterRoute isLogged={isLogged} />} >
             <Route path='/Administrador' element={<HomeAdmin />} />
             <Route path='/Usuario_Administrador/:name' element={<ViewUsersAdmin />} />

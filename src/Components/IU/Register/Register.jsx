@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 export const Register = () => {
 
   //token course
-  const UrlTokenCourse = "https://oversigthapi.azurewebsites.net/v3/courses";
+  const UrlTokenCourse = "http://localhost:4000/v3/courses";
 
   useEffect(() => {
     const getCourses = () => {
@@ -22,7 +22,7 @@ export const Register = () => {
   const [data, setData] = useState([" "]);
 
   const user = (data) => {
-    const urlCourse = "https://oversigthapi.azurewebsites.net/v1/decode/" + data;
+    const urlCourse = "http://localhost:4000/v1/decode/" + data;
     axios.get(urlCourse).then((response) => {
       setData(response.data[0]);
     });
@@ -49,10 +49,10 @@ export const Register = () => {
 
   const format = (e) => {
     if (rolUsers == 2) {
-      URL = "https://oversigthapi.azurewebsites.net/v4/students";
+      URL = "http://localhost:4000/v4/students";
     }
     if (rolUsers == 3) {
-      URL = "https://oversigthapi.azurewebsites.net/v4/teachers";
+      URL = "http://localhost:4000/v4/teachers";
     }
     if (rolUsers == "") {
       const paragrapg = "Es necesario escoger el rol";
@@ -68,6 +68,7 @@ export const Register = () => {
     formdata.append("idcourse", course)
     formdata.append("image", image)
     formdata.append("signature", null)
+    formdata.append("active", 1)
 
     axios
       .post(URL, formdata)

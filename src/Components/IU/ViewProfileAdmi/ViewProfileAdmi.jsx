@@ -11,52 +11,38 @@ import { CardStudent } from '../CardStudent/CardStudent';
 //librerias
 import jwtDecode from "jwt-decode";
 import swal from '@sweetalert/with-react';
+import Cookies from "universal-cookie";
 
 export const ViewProfileAdmi = ({ courseStudent }) => {
 
   //editar
-  const UrlStudent1 = "https://oversigthapi.azurewebsites.net/v1/students/" + courseStudent.estudianteDocumento;
-
+  const cookies = new Cookies();
+  const documentAdmin = (cookies.get("idAdministrador"))
+  
   const [document, setDocument] = useState("")
   const [nameStudent, setNameStudent] = useState("")
   const [lastName, setLastName] = useState("")
-  const [genre, setGenre] = useState(courseStudent.genero)
-  const [signature, setSignature] = useState(null)
-  const [dateOfBirth, setDateOfBirth] = useState(courseStudent.fecnac)
-  const [image, setImage] = useState(null)
   const [course, setCourse] = useState("");
+  
+  const UrlStudent1 = "http://localhost:4000/v1/administrators/" + documentAdmin + "/students/" + courseStudent.estudianteDocumento;
 
-  let formdata = new FormData()
+  const format = () => {
 
-  const format = (e) => {
-
-    formdata.append("newDocument", document)
-    formdata.append("name", nameStudent)
-    formdata.append("lastName", lastName)
-    formdata.append("dateOfBirth", dateOfBirth)
-    formdata.append("genre", genre)
-    formdata.append("signature", signature)
-    formdata.append("idcourse", course)
-    formdata.append("image", image)
-
-    console.log(e.preventDefault());
-    axios.put(UrlStudent1, formdata)
-      .then((response) => getToken(response.data))
+    axios.put(UrlStudent1, {
+      "newDocument": document,
+      "name": nameStudent,
+      "lastName": lastName,
+      "idcourse": course
+    })
+      .then((response) => getMessage(response.status))
       .catch((error) => console.log(error))
   }
 
-  const getToken = (data) => {
-    const urlToken = "https://oversigthapi.azurewebsites.net/v1/decode/" + data;
-    axios.get(urlToken).then((response) => {
-      getMessage(response.status);
-    });
-  }
-
   const getMessage = (data) => {
-    if (data == 200) {
+    if (data == 202) {
       {
         swal("Exito!", "Se actualizo exitosamente", "success")
-        window.location.reload()
+        // window.location.reload()
       }
     } else {
       swal("Oops!", "No se pudo actualizar", "error");
@@ -69,7 +55,7 @@ export const ViewProfileAdmi = ({ courseStudent }) => {
 
   useEffect(() => {
     const getRecord = () => {
-      axios.get(`https://oversigthapi.azurewebsites.net/v2/students/${name}/observers`)
+      axios.get(`http://localhost:4000/v2/students/${name}/observers`)
         .then((res) => {
           const token = jwtDecode(res.data)
           setRecord(token.results)
@@ -80,7 +66,7 @@ export const ViewProfileAdmi = ({ courseStudent }) => {
   }, []);
 
   //token course
-  const UrlTokenCourse = "https://oversigthapi.azurewebsites.net/v3/courses";
+  const UrlTokenCourse = "http://localhost:4000/v3/courses";
 
   useEffect(() => {
     const getCourses = () => {
@@ -94,7 +80,7 @@ export const ViewProfileAdmi = ({ courseStudent }) => {
 
   //disable student
   const Disable = () => {
-    const urlDisable = "https://oversigthapi.azurewebsites.net/v1/students/" + courseStudent.estudianteDocumento;
+    const urlDisable = "http://localhost:4000/v1/students/" + courseStudent.estudianteDocumento;
     axios.delete(urlDisable).then((response) => {
       mensage(response.status);;
     });
@@ -113,7 +99,7 @@ export const ViewProfileAdmi = ({ courseStudent }) => {
   const [data, setData] = useState([" "]);
 
   const user = (data) => {
-    const urlCourse = "https://oversigthapi.azurewebsites.net/v1/decode/" + data;
+    const urlCourse = "http://localhost:4000/v1/decode/" + data;
     axios.get(urlCourse).then((response) => {
       setData(response.data[0]);
     });
@@ -122,7 +108,6 @@ export const ViewProfileAdmi = ({ courseStudent }) => {
   return (
     <div>
       <img src={courseStudent.fotoEstudiante || foto} alt="photo" className="photoView" />
-      <form onSubmit={format} >
         <div className='centerInfor'>
           <div className='information'>
             <input type="text" defaultValue={courseStudent.estudianteNombre} onChange={(e) => setNameStudent(e.target.value)} />
@@ -168,12 +153,11 @@ export const ViewProfileAdmi = ({ courseStudent }) => {
         <div className='prueba'>
           <div className='centerBtn' >
             <div className="btn_Cancel1">
-              <button type="submit" className='update' onClick={format} >Actualizar</button>
+              <button className='update' onClick={format} >Actualizar</button>
+              <button className="disable" onClick={Disable}>Deshabilitar</button>
             </div>
           </div>
         </div>
-      </form>
-      <button className="disable" onClick={Disable}>Deshabilitar</button>
     </div>
   )
 };

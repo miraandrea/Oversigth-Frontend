@@ -100,7 +100,7 @@ export const ViewUsersAdmin = () => {
 
   useEffect(() => {
     const getStudent = () => {
-      axios.get(`https://oversigthapi.azurewebsites.net/v1/courses/${name}`).then((response) => {
+      axios.get(`http://localhost:4000/v1/courses/${name}`).then((response) => {
         setCourses(response.data);
         setTeacher(response.data[0]);
         setloading(false);
@@ -117,7 +117,7 @@ export const ViewUsersAdmin = () => {
   useEffect(() => {
     const getSearch = () => {
       axios
-        .get(`https://oversigthapi.azurewebsites.net/v1/students/${search}`)
+        .get(`http://localhost:4000/v1/students/${search}`)
         .then((res) => user(res.data))
         .catch((error) => console.log(error));
     };

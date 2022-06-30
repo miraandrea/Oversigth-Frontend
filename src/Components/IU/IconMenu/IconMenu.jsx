@@ -77,7 +77,7 @@ export const IconMenu = () => {
       <ListItemButton >
         <ListItemIcon>
           <NavLink to="/Habilitar">
-            <MdDoNotDisturbAlt />
+            <MdDoNotDisturbAlt  className="iconmenu"/>
           </NavLink>
         </ListItemIcon>
         <ListItemText primary="Habilitar" />

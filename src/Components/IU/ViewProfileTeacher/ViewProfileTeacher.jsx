@@ -16,7 +16,7 @@ export const ViewProfileTeacher = ({ courseStudent }) => {
   const cookies = new Cookies();
   const documentTeacher = (cookies.get("idDocente"))
 
-  const UrlHistory = "https://oversigthapi.azurewebsites.net/v1/students/" + name + "/observers"
+  const UrlHistory = "http://localhost:4000/v1/students/" + name + "/observers"
 
   const [title, setTitle] = useState("")
   const [data, setData] = useState("")
@@ -41,7 +41,7 @@ export const ViewProfileTeacher = ({ courseStudent }) => {
   }
 
   const token = (data) => {
-    axios.get(`https://oversigthapi.azurewebsites.net/v1/decode/${data}`)
+    axios.get(`http://localhost:4000/v1/decode/${data}`)
       .then((res) => userHistory(res.data))
   }
 

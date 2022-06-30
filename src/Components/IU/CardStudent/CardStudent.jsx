@@ -4,7 +4,7 @@ import './CardStudent.css'
 export const CardStudent = ({ course2 }) => {
 
   return (
-    <div>
+    <div className='contCards1'>
       <div className="cards">
         <div className="cardInfo">
           <div className="inputsInfo">

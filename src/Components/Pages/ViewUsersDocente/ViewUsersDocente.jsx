@@ -91,7 +91,7 @@ export const ViewUsersDocente = () => {
 
   const { name } = useParams()
 
-  const URL = "https://oversigthapi.azurewebsites.net/v1/courses/" + name;
+  const URL = "http://localhost:4000/v1/courses/" + name;
 
   useEffect(() => {
     const getCourses = () => {
@@ -108,7 +108,7 @@ export const ViewUsersDocente = () => {
   const [loading, setloading] = useState(true)
   const [courses, setCourses] = useState([]);
 
-  const UrlSearchCourse = "https://oversigthapi.azurewebsites.net/v1/courses/0" + search;
+  const UrlSearchCourse = "http://localhost:4000/v1/courses/0" + search;
 
   useEffect(() => {
     const getSearch = () => {

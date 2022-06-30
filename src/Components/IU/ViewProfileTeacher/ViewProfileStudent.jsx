@@ -13,7 +13,7 @@ export const ViewProfileStudent = ({ courseStudent }) => {
 
   useEffect(() => {
     const getRecord = () => {
-      axios.get(`https://oversigthapi.azurewebsites.net/v2/students/${name}/observers`)
+      axios.get(`http://localhost:4000/v2/students/${name}/observers`)
         .then((res) => {
           const token = jwtDecode(res.data)
           setRecord(token.results)

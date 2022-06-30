@@ -20,28 +20,28 @@ export const Header = ({ search, setSearch }) => {
   if (rol == "Administrator") {
     const idUserAdm = cookies.get("idAdministrador");
     axios
-      .get(`https://oversigthapi.azurewebsites.net/v1/administrators/${idUserAdm}`)
+      .get(`http://localhost:4000/v1/administrators/${idUserAdm}`)
       .then((response) => getAllPhotos(response.data))
       .catch((error) => console.log(error));
   }
   else if (rol == "Teacher") {
     const idUserDoce = cookies.get("idDocente")
     axios
-      .get(`https://oversigthapi.azurewebsites.net/v1/teachers/${idUserDoce}`)
+      .get(`http://localhost:4000/v1/teachers/${idUserDoce}`)
       .then((response) => getAllPhotos(response.data))
       .catch((error) => console.log(error));
   }
   else if (rol == "Student") {
     const idUserEstu = cookies.get("idEstudiante")
     axios
-      .get(`https://oversigthapi.azurewebsites.net/v2/students/${idUserEstu}`)
+      .get(`http://localhost:4000/v2/students/${idUserEstu}`)
       .then((response) => getAllPhotos(response.data))
       .catch((error) => console.log(error));
   }
 
   const getAllPhotos = (data) => {
     axios
-      .get(`https://oversigthapi.azurewebsites.net/v1/decode/${data}`)
+      .get(`http://localhost:4000/v1/decode/${data}`)
       .then((response) => setPhotos(response.data))
       .catch((error) => console.log(error));
   };
@@ -49,7 +49,7 @@ export const Header = ({ search, setSearch }) => {
   return (
     <div className="containerHeader">
       <div className="textLogo">
-        <h1>Oversight</h1>
+        <h1>Oversigth</h1>
       </div>
       <Search search={search} setSearch={setSearch} />
       <IconButton color="inherit" onClick={handleGoViewProfile}>

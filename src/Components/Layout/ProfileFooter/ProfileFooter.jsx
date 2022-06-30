@@ -14,28 +14,28 @@ export const ProfileFooter = () => {
     
     const profileAdmi = (idUser) => {
         axios
-        .get(`https://oversigthapi.azurewebsites.net/v1/administrators/${idUser}`)
+        .get(`http://localhost:4000/v1/administrators/${idUser}`)
         .then((response) => getToken(response.data))
         .catch((error) => console.log(error))
     }
     
     const profileTeach = (idUser) => {
         axios
-        .get(`https://oversigthapi.azurewebsites.net/v1/teachers/${idUser}`)
+        .get(`http://localhost:4000/v1/teachers/${idUser}`)
         .then((response) => getToken(response.data))
         .catch((error) => console.log(error))
     }
     
     const profileStude = (idUser) => {
         axios
-        .get(`https://oversigthapi.azurewebsites.net/v2/students/${idUser}`)
+        .get(`http://localhost:4000/v2/students/${idUser}`)
         .then((response) => getToken(response.data))
         .catch((error) => console.log(error))
     }
     
     const getToken = (data) => {
         axios
-        .get(`https://oversigthapi.azurewebsites.net/v1/decode/${data}`)
+        .get(`http://localhost:4000/v1/decode/${data}`)
         .then((response) => setUser(response.data[0]))
         .catch((error) => console.log(error));
     }

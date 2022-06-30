@@ -20,7 +20,7 @@ export const AdmProfileFooter = () => {
 
     if (rol === "Teacher"){
       const documento = (cookies.get("idTeacher"))
-      const URL = "https://oversigthapi.azurewebsites.net/v1/teacher/" + documento
+      const URL = "http://localhost:4000/v1/teacher/" + documento
   
       axios.get(URL)
            .then((res) => setUser(res.data))
@@ -31,14 +31,14 @@ export const AdmProfileFooter = () => {
       const cookies = new Cookies();
       const idUser = cookies.get("idAdministrador");
       axios
-        .get(`https://oversigthapi.azurewebsites.net/v1/administrators/${idUser}`)
+        .get(`http://localhost:4000/v1/administrators/${idUser}`)
         .then((response) => getAllPhotos(response.data))
         .catch((error) => console.log(error));
     
     
       const getAllPhotos = (data) => {
         axios
-          .get(`https://oversigthapi.azurewebsites.net/v1/decode/${data}`)
+          .get(`http://localhost:4000/v1/decode/${data}`)
           .then((response) => {
             setPhotos(response.data)
             setUser(response.data)
@@ -55,7 +55,7 @@ export const AdmProfileFooter = () => {
     }
     if (rol === "Student"){
       const documento = (cookies.get("idStudent"))
-      const URL = "https://oversigthapi.azurewebsites.net/v2/students/" + documento
+      const URL = "http://localhost:4000/v2/students/" + documento
   
       axios.get(URL)
            .then((res) => setUser(res.data))

@@ -16,11 +16,8 @@
     margin-top: -33px;
 }
 
-.btn_Cancel1 {
-    display: flex;
-    margin-top: 20px;
-    gap: 67px;
-    margin-left: 5px;
+.cancel1 {
+    margin-top: 29px;
 }
 
 .btn_Cancel {
@@ -106,9 +103,8 @@ textarea {
         height: 62vw;
     }
 
-    .btn_Cancel1 {
-        margin-top: 27px;
-        gap: 91px;
+    .cancel1 {
+        margin-top: 38px;
     }
 
     .btn_Cancel {
@@ -156,7 +152,11 @@ textarea {
     }
 
     .btn_Cancel {
-        margin-top: -39.5vw;
+        margin-top: -53vw;
+    }
+
+    .cancel1 {
+        margin-top: 43.5%;
     }
 
     .information input {

@@ -3,7 +3,10 @@
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  
+
 }
+
 
 .cardInfo {
   border: 1px solid #1d9df6;
@@ -59,9 +62,13 @@
   border-bottom: 2px solid #1d9df6;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .cards {
     width: 41vw;
+    
+    display: flex;
+    justify-content: center;
+    margin-left: 200px;
   }
 
   .cardInfo {
@@ -75,11 +82,17 @@
     margin-top: 50px;
   }
 
+  
+.title{
+  background-color: red;
+}
+
   .inputsDescription {
     width: 101%;
     margin-top: 50px;
   }
 }
+
 
 @media(max-width:420px) {
   .cards {

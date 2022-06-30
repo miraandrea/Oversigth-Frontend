@@ -163,7 +163,7 @@ export const HomeStudent = () => {
   const cookies = new Cookies()
   const idUser = cookies.get("idEstudiante")
 
-  const UrlTokenCourse = `https://oversigthapi.azurewebsites.net/v2/students/${idUser}/observers`;
+  const UrlTokenCourse = `http://localhost:4000/v2/students/${idUser}/observers`;
 
   useEffect(() => {
     const getCourses = () => {
@@ -182,7 +182,7 @@ export const HomeStudent = () => {
   const [courses, setCourses] = useState([]);
 
   const getToken = (data) => {
-    axios.get(`https://oversigthapi.azurewebsites.net/v1/decode/${data}`)
+    axios.get(`http://localhost:4000/v1/decode/${data}`)
       .then((res) => user(res.data))
       .catch((error) => console.log(error))
   }

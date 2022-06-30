@@ -121,7 +121,7 @@ export const HomeAdmin = () => {
     setOpen(!open);
   };
 
-  const UrlTokenCourse = "https://oversigthapi.azurewebsites.net/v3/courses";
+  const UrlTokenCourse = "http://localhost:4000/v3/courses";
 
   useEffect(() => {
     const getCourses = () => {
@@ -144,7 +144,7 @@ export const HomeAdmin = () => {
   useEffect(() => {
     const getSearch = () => {
       axios
-        .get(`https://oversigthapi.azurewebsites.net/v1/courses/${search}`)
+        .get(`http://localhost:4000/v1/courses/${search}`)
         .then((res) => user(res.data))
         .catch((error) => console.log(error));
     };

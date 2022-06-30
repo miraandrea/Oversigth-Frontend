@@ -86,7 +86,7 @@ export const HomeTeac = () => {
   const cookies = new Cookies()
   const idUser = cookies.get("idDocente")
 
-  const UrlTokenCourse = `https://oversigthapi.azurewebsites.net/v1/teachers/${idUser}/courses`;
+  const UrlTokenCourse = `http://localhost:4000/v1/teachers/${idUser}/courses`;
 
   useEffect(() => {
     const getCourses = () => {
@@ -100,7 +100,7 @@ export const HomeTeac = () => {
   }, []);
 
   const getToken = (data) => {
-    axios.get(`https://oversigthapi.azurewebsites.net/v1/decode/${data}`)
+    axios.get(`http://localhost:4000/v1/decode/${data}`)
       .then((res) => setCourses(res.data))
       .catch((error) => console.log(error))
   }
@@ -109,7 +109,7 @@ export const HomeTeac = () => {
   const [loading, setloading] = useState(true)
   const [courses, setCourses] = useState([]);
 
-  const UrlSearchCourse = "https://oversigthapi.azurewebsites.net/v1/courses/0" + search;
+  const UrlSearchCourse = "http://localhost:4000/v1/courses/0" + search;
 
   useEffect(() => {
     const getSearch = () => {
